@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         _tmp: 'fe/tmp',
         _prefixed: 'fe/tmp/prefixed',
         _assets: 'fe/assets',
-
+        _static_assets: 'static/assets',
         _console: 'fe/console',
         _console_src: 'fe/console/src',
         _console_dist: 'fe/console/dist',
@@ -67,6 +67,16 @@ module.exports = function(grunt) {
         less: {
             options: {
                 compress: false
+            },
+            assets:{
+                files: [{
+                    expand: true,
+                    cwd: '<%= config._assets %>',
+                    src: '**/*.less',
+                    dest: '<%= config._static_assets %>',
+                    ext: '.css',
+                    extDot: 'last'
+                }]
             },
             console: {
                 files: [{
@@ -309,8 +319,8 @@ module.exports = function(grunt) {
     });
     grunt.registerTask('lesser', ['less', 'autoprefixer']); //autoprefixer -->  config._prefixed
     grunt.registerTask('clesser', ['clean', 'less', 'autoprefixer']);
-    grunt.registerTask('jser', ['jshint', 'uglify', 'copy:js']); // uglify --> config.**dist
-    grunt.registerTask('jssrc', ['jshint', 'copy:sourcejs']);
+    grunt.registerTask('jser', [/*'jshint', */'uglify', 'copy:js']); // uglify --> config.**dist
+    grunt.registerTask('jssrc', [/*'jshint', */'copy:sourcejs']);
     grunt.registerTask('css2dev', ['lesser', 'copy:prefixed']);
     grunt.registerTask('css2serve', ['clesser', 'cssmin', 'copy:mincss']);
     grunt.registerTask('dev', ['css2dev', 'jssrc', 'copy:vendor', 'copy:assets', 'watch']);

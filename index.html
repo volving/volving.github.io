@@ -4,14 +4,38 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Welcome to Volving's</title>
-	<link rel="stylesheet" href="./static/dist/style.css">
+	<link rel="stylesheet" href="./static/vendor/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./static/assets/htmls/css/main.css">
 </head>
 <body>
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapseMenu">
+				<span class="sr-only">Navbar toggle</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="/index.html" class="navbar-brand">Volving's</a>
+		</div>
+		<div id="collapseMenu" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="#">Alpha</a></li>
+				<li><a href="#">Beta</a></li>
+				<li><a href="#">Gamma</a></li>
+				<li><a href="#">Epsilon</a></li>
+				<li><a href="#">Theta</a></li>
+			</ul>
+		</div>
+	</nav>
 	<h1>Bonjour, Welcome!</h1>
-
-
-
 	<h2>You see this because the site is under developing...</h2>
-	<script type="text/javascript" src="./static/dist/js/main.js"></script>
+	<a href="./fe/assets/htmls/blog.html">Blog Template</a>
+	<script type="text/javascript" src="./static/vendor/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="./static/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+		});
+	</script>
 </body>
 </html>
