@@ -1,7 +1,7 @@
 title: Volving
 description: My Personal Blog
 author: Volving
-logo: "static/img/avatar.png"
+logo: "/static/img/avatar.png"
 github: https://github.com/volving
 about: Freelance developer
 
